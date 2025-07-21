@@ -3,3 +3,4 @@ environment/
 *.env
 # Ignorar configurações sensíveis
 src/config/
+dist/
