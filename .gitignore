@@ -1,0 +1,5 @@
+# Ignorar diretório de variáveis de ambiente
+environment/
+*.env
+# Ignorar configurações sensíveis
+src/config/
