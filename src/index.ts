@@ -3,18 +3,16 @@ import { commands, loadCommands } from './structures/commandHandler.js';
 import './config/dotenv.js'
 
 loadCommands();
-// Crie o client com intents básicos para comandos de slash
+
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages],
 });
 
-// Registre comandos localmente para controle
-// Quando o bot estiver pronto
 client.once('ready', () => {
   console.log(`BOT Iniciado com sucesso em: ${client.user?.tag}!`);
 });
 
-// Escutando interações (slash commands)
+
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
@@ -30,5 +28,4 @@ client.on('interactionCreate', async (interaction) => {
   }
 });
 
-// Login com token do .env
 client.login(process.env.TOKEN);

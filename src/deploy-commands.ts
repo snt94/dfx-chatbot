@@ -6,11 +6,9 @@ import { fileURLToPath } from 'node:url';
 
 config();
 
-// Para trabalhar com __dirname em ESModules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Diretório de comandos
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = (await fs.readdir(commandsPath)).filter(file => file.endsWith('.ts') || file.endsWith('.js'));
 
@@ -27,10 +25,10 @@ for (const file of commandFiles) {
   }
 }
 
-// ⚠️ Use variáveis reais ou .env
+
 const token = process.env.TOKEN!;
 const clientId = process.env.CLIENT_ID!;
-const guildId = process.env.GUILD_ID!; // Pode ser omitido para registrar globalmente
+const guildId = process.env.GUILD_ID!;
 
 const rest = new REST({ version: '10' }).setToken(token);
 
