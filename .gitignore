@@ -1,6 +1,8 @@
+# Ignorar módulos de instalação
+node_modules
+dist
 # Ignorar diretório de variáveis de ambiente
 environment/
 *.env
 # Ignorar configurações sensíveis
 src/config/
-dist/
